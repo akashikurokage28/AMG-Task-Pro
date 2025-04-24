@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+@font-face {
+    font-family: "remixicon";
+    src: url("//cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.woff2") format("woff2");
+    font-display: swap;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Instrument Sans, sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --text-color: #e5d7fe;
+    --secondary-text-color: #a79db9;
+    --dark-text-color: #0f0e11;
+    --accent-color: #8c36e2;
+    --other-color: #fa193f;
+}
+
+body{
+    background: var(--dark-text-color);
+    color: var(--text-color);
+}
+
+/* Main Container */
+.main-container{
+    position: relative;
+    width: 100%;
+    min-height: 100svh;
+    padding: 0 0 32px;
+}
+
+/* Navigation Bar */
+.nav-bar{
+    width: 100%;
+    padding: 2rem 1.5rem;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.nav-bar .logo{
+    font-size: 1rem;
+    font-family: 'Bruno Ace', sans-serif;
+    -webkit-text-stroke: var(--text-color) 1px;
+    letter-spacing: 1px;
+}
+
+.nav-bar a{
+    color: var(--secondary-text-color);
+    font-size: .65rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    transition: .5s ease-in-out;
+}
+
+.nav-bar a:hover{
+    color: var(--text-color);
+}
+
+/* Create Account Container */
+.create-acc-container{
+    width: 100%;
+    height: 100%;
+    padding: calc(80px + 2rem) 1.5rem 3rem;
+    overflow: hidden;
+}
+
+.create-acc-form{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.create-acc-form h1{
+    grid-column: -1 / 1;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.create-acc-form .input:nth-child(6),
+.create-acc-form .checkbox-input{
+    grid-column: -1 / 1;
+}
+
+.create-acc-form .input{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--secondary-text-color);
+    border-radius: 5px;
+    padding: 0 12px;
+}
+
+.create-acc-form .input input{
+    all: unset;
+    width: 100%;
+    height: 100%;
+    font-size: .55rem;
+}
+
+.create-acc-form .input label{
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 12px;
+    font-size: .55rem;
+    color: var(--secondary-text-color);
+    transition: .3s ease-in-out;
+    z-index: 10;
+}
+
+.create-acc-form .input:focus-within {
+    border: 1px solid var(--accent-color);
+}
+
+.create-acc-form .input:has(input:valid) {
+    border: 1px solid var(--text-color);
+}
+
+.create-acc-form .input:has(input:invalid:not(:placeholder-shown)) {
+    border: 1px solid var(--other-color);
+}
+
+
+.create-acc-form .input input:focus + label,
+.create-acc-form .input input:not(:placeholder-shown) + label{
+    top: 0;
+    left: 6px;
+    padding: 0 4px;
+    transform: translateY(-50%) scale(.85);
+    background: var(--dark-text-color);
+}
+
+.create-acc-form #backup-pass-input ~ i {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    right: 8px;
+    cursor: pointer;
+}
+
+.create-acc-form #backup-pass-input ~ i::after {
+    content: "Your backup passcode is used to recover your account in case you forget your password.";
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 10px;
+    left: -100px;
+    font-family: Instrument Sans;
+    font-style: normal;
+    font-size: 0.7rem;
+    width: 150px;
+    height: auto;
+    background: var(--secondary-text-color);
+    border: 1px solid var(--text-color);
+    color: var(--dark-text-color);
+    padding: 8px 16px;
+    border-radius: 8px;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.create-acc-form #backup-pass-input ~ i:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.create-acc-form .checkbox-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.create-acc-form .checkbox-input label{
+    font-size: .65rem;
+}
+
+.create-acc-form .checkbox-input input{
+    all: unset;
+    position: relative;
+    width: 12px;
+    height: 12px;
+    border: 1px solid var(--text-color);
+    border-radius: 3px;
+}
+
+.create-acc-form .checkbox-input input:checked{
+    background: var(--accent-color);
+}
+
+.create-acc-form .checkbox-input input:checked::after{
+    content: "\EB7A";
+    font-family: "remixicon";
+    font-size: .7rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main-container #create-acc-btn{
+    all: unset;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    bottom: 16px;
+    left: 50%;
+    padding: 8px 16px;
+    font-size: .7rem;
+}
+
+.main-container #create-acc-btn:disabled{
+    border: 1px solid var(--secondary-text-color);
+    border-radius: 5px;
+    color: var(--dark-text-color);
+    background: var(--secondary-text-color);
+    opacity: .7;
+    cursor: not-allowed;
+    transition: .3s ease-in-out;
+}
+
+.main-container #create-acc-btn:enabled{
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    background: var(--accent-color);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.main-container #create-acc-btn:enabled:focus,
+.main-container #create-acc-btn:enabled:hover{
+    box-shadow: 0 0 10px var(--accent-color);
+    transform: translate(-50%,-50%) scale(0.95);
+    opacity: .85;
+}
+
+/* Responsive Design */
+@media (min-width: 375px){
+    .nav-bar .logo{
+        font-size: 1.25rem;
+    }
+
+    .nav-bar a{
+        font-size: .8rem;
+    }
+
+    .create-acc-form h1{
+        font-size: 1.3rem
+    }
+
+    .create-acc-form .input input,
+    .create-acc-form .input label{
+        font-size: .7rem;
+    }
+
+    .main-container #create-acc-btn{
+        font-size: .8rem;
+        padding: 12px 24px;
+    }
+}
+
+@media (min-width: 510px){
+    .create-acc-form{
+        width: 375px;
+    }
+
+    .create-acc-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-bar{
+        padding: 2.5rem 2rem;
+    }
+}
+
+@media (min-width: 768px){
+    .nav-bar .logo{
+        font-size: 1.5rem;
+    }
+
+    .nav-bar a{
+        font-size: .9rem;
+        gap: 8px;
+    }
+
+    .create-acc-form{
+        gap: 20px;
+        width: 425px;
+    }
+
+    .create-acc-form h1{
+        font-size: 1.5rem
+    }
+
+    .create-acc-form .input{
+        padding: 0 16px;
+        height: 50px;
+    }
+
+    .create-acc-form .input input,
+    .create-acc-form .input label{
+        font-size: .8rem;
+    }
+
+    .create-acc-form .input label{
+        left: 16px;
+    }
+
+    .create-acc-form .input input:focus + label,
+    .create-acc-form .input input:not(:placeholder-shown) + label{
+        left: 6px;
+    }
+
+    .create-acc-form .checkbox-input label{
+        font-size: .8rem;
+    }
+
+    .create-acc-form .checkbox-input input{
+        width: 16px;
+        height: 16px;
+    }
+
+    .create-acc-form #backup-pass-input ~ i{
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 1024px){
+    .main-container{
+        min-height: 100vh;
+    }
+
+    .nav-bar{
+        padding: 3rem 3rem;
+    }
+
+    .create-acc-container{
+        padding: calc(80px + 3rem) 3rem 3rem;
+    }
+
+    .main-container #create-acc-btn{
+        font-size: .9rem;
+        padding: 16px 32px;
+        border-radius: 10px;
+    }
+}
+
+@media (min-width: 1240px){
+    .nav-bar{
+        padding: 3rem 4rem;
+    }
+}

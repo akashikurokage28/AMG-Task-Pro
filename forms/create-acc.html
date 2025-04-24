@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- REMIXICON CDN LINK -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <!-- CSS Links -->
+     <link rel="stylesheet" href="../css/register-form.css">
+
+    <title>Create Your Account - AMG Task Pro</title>
+</head>
+<body>
+    <!-- Main Container -->
+    <main class="main-container">
+        <!-- Navigation Bar -->
+        <nav class="nav-bar">
+            <h1 class="logo">AMG</h1>
+            <a href="../homepage.html" class="back-btn">Go Back<i class="ri-arrow-right-line"></i></a>
+        </nav>
+
+        <section class="create-acc-container">
+            <form class="create-acc-form">
+                <!-- Heading -->
+                 <h1>Create Your Account</h1>
+                 <!-- Inputs -->
+                  <div class="input">
+                    <input type="text" id="name-input" placeholder=" " required>
+                    <label for="name-input">Enter Your Name</label>
+                  </div>
+
+                  <div class="input">
+                    <input type="text" id="username-input" placeholder=" " required>
+                    <label for="username-input">Username</label>
+                  </div>
+
+                  <div class="input">
+                    <input type="password" id="password-input" placeholder=" " required>
+                    <label for="password-input">Create Your Password</label>
+                  </div>
+
+                  <div class="input">
+                    <input type="password" id="confirm-pass-input" placeholder=" " required>
+                    <label for="confirm-pass-input">Confirm Your Password</label>
+                  </div>
+
+                  <div class="input">
+                    <input type="number" id="backup-pass-input" placeholder=" " required>
+                    <label for="backup-pass-input">Enter Your Backup Passcode</label>
+                    <i class="ri-question-fill"></i>
+                  </div>
+
+                  <div class="checkbox-input">
+                    <input type="checkbox" id="confirm-info-input" required>
+                    <label for="confirm-info-input">I acknowledge the information provided above</label>
+                  </div>
+            </form>
+        </section>
+        <button id="create-acc-btn" onclick="window.location.href='#';">Create Account</button>
+    </main>
+    <script src="../js/create-acc.js"></script>
+</body>
+</html>

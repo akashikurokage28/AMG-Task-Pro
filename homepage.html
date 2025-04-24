@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <!-- REMIXICON CDN LINK -->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    
+        <!-- Animated On Scroll CDN LINK -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+        <!-- CSS LINKS -->
+         <link rel="stylesheet" href="./css/homepage.css">
+        <title>AMG Task Pro - Your Future Starts Here</title>
+    </head>
+<body>
+    <!-- Background Video -->
+    <div class="video-container">
+        <video autoplay muted loop class="background-video" src="./assets/images/lv_0_20250421101156.mp4" type="video/mp4"></video>
+     </div>
+
+     <!-- Main Container -->
+      <main class="main-container">
+        <!-- Navigation Bar -->
+         <nav class="nav-bar" data-aos="fade-down">
+            <a href="./homepage.html" class="logo">AMG</a>
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <i class="ri-close-fill" id="close-menu"></i>
+                <li><a href="./homepage.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Features & Reviews</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            
+            <!-- Secondary CTA Buttons-->
+             <div class="secondary-cta-container">
+                <!-- Hamburger Menu Icon -->
+                <i class="ri-menu-4-fill" id="menu-bar"></i>
+
+                <!-- Customer Service Button -->
+                <a href="#" class="customer-service-btn">Customer Service<i class="ri-arrow-right-line"></i></a>
+             </div>
+         </nav>
+
+         <!-- Hero Section -->
+          <section class="hero-section" data-aos="slide-right">
+            <div class="hero-text">
+                <h1>
+                    Build Your <span>Purpose</span>,
+                    <br>
+                    Create Your <span>Future</span>
+                </h1>
+                <p>Turn your ambitions into achievements with<br>the ultimate productivity platform.</p>
+            </div>
+
+            <!-- CTA Button -->
+             <div class="cta-container">
+                <a href="./forms/create-acc.html" class="get-started-btn">
+                    Get Started
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+                <a href="#" class="learn-more-btn">Learn More</a>
+             </div>
+          </section>
+      </main>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+        AOS.init({
+            once: true,
+            startEvent: 'DOMContentLoaded', 
+            duration: 2000, 
+            delay: 200,
+            easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        });
+      </script>
+     <script src="./js/homepage.js"></script>
+</body>
+</html>
