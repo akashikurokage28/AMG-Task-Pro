@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+@font-face {
+    font-family: "remixicon";
+    src: url("//cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.woff2") format("woff2");
+    font-display: swap;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Instrument Sans, sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --text-color: #e5d7fe;
+    --secondary-text-color: #a79db9;
+    --dark-text-color: #0f0e11;
+    --accent-color: #8c36e2;
+    --other-color: #fa193f;
+}
+
+body{
+    background: var(--dark-text-color);
+    color: var(--text-color);
+}
+
+/* Navigation Bar */
+.nav-bar{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+    z-index: 1000;
+}
+
+.nav-bar .logo{
+    font-family: Bruno Ace, sans-serif;
+    font-size: 1.25rem;
+    -webkit-text-stroke: var(--text-color) 1px;
+    letter-spacing: 1px;
+}
+
+.nav-bar a{
+    font-size: .75rem;
+    color: var(--secondary-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    transition: .3s ease-in-out;
+}
+
+.nav-bar a:hover{
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-color)
+}
+
+/* Main Container */
+.confirmation-container{
+    width: 100%;
+    height: 100svh;
+    padding: calc(80px + 2rem) 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.confirmation-container .successful-message{
+    display: grid;
+    place-items: center;
+    gap: 24px;
+    text-align: center;
+}
+
+.successful-message h1{
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.successful-message i{
+    font-size: 5rem;
+    color: var(--accent-color);
+}
+
+.successful-message p{
+    font-size: .7rem;
+    color: var(--secondary-text-color);
+}
+
+.confirmation-container .login-btn{
+    color: var(--text-color);
+    font-size: .75rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    background: var(--accent-color);
+    padding: 8px 24px;
+    transition: .5s ease-in-out;
+}
+
+.confirmation-container .login-btn:hover{
+    transform: scale(.9);
+    background: transparent;
+    box-shadow: 0 0 10px var(--accent-color);
+    color: var(--secondary-text-color);
+}
+
+@media (min-width: 375px){
+    .nav-bar{
+        padding: 2rem 1.5rem;
+    }
+
+    .confirmation-container{
+        padding: calc(100px + 2rem) 1.5rem 2rem;
+    }
+
+    .successful-message h1{
+        font-size: 1.2rem;
+    }
+
+    .successful-message i{
+        font-size: 5.5rem;
+    }
+
+    .successful-message p{
+        font-size: .8rem;
+    }
+
+    .confirmation-container .login-btn{
+        font-size: .9rem;
+        padding: 12px 32px;
+    }
+}
+
+@media (min-width: 560px){
+    .nav-bar{
+        padding: 2rem;
+    }
+
+    .nav-bar .logo{
+        font-size: 1.3rem;
+    }
+
+    .nav-bar a{
+        font-size: .8rem;
+    }
+
+    .successful-message h1{
+        font-size: 1.5rem;
+    }
+
+    .successful-message i{
+        font-size: 6rem;
+    }
+
+    .successful-message p{
+        font-size: .9rem;
+    }
+
+    .confirmation-container .login-btn{
+        font-size: .9rem;
+        padding: 12px 40px;
+    }
+}
+
+@media (min-width: 930px){
+    .nav-bar{
+        padding: 2.5rem 3rem;
+    }
+
+    .confirmation-container{
+        padding: calc(100px + 2.5rem) 3rem 2rem;
+    }
+}
+
+@media (min-width: 1240px){
+    .nav-bar .logo{
+        font-size: 1.5rem;
+    }
+
+    .nav-bar a{
+        font-size: .9rem;
+    }
+
+    .successful-message h1{
+        font-size: 1.8rem;
+    }
+
+    .successful-message i{
+        font-size: 6.5rem;
+    }
+
+    .successful-message p{
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1440px){
+    .nav-bar{
+        padding: 3rem 4rem;
+    }
+
+    .confirmation-container{
+        padding: calc(100px + 3rem) 4rem 2rem;
+    }
+
+    .confirmation-container .login-btn{
+        font-size: 1rem;
+        padding: 16px 48px;
+    }
+}
