@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Instrument Sans, sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --text-color: #e5d7fe;
+    --secondary-text-color: #a79db9;
+    --dark-text-color: #0f0e11;
+    --accent-color: #8c36e2;
+    --other-color: #fa193f;
+}
+
+body{
+    background: var(--dark-text-color);
+    color: var(--text-color);
+}
+
+/* Navigation Bar */
+.nav-bar{
+    position: fixed;
+    width: 100%;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.nav-bar .logo{
+    font-size: 1.25rem;
+    font-family: 'Bruno Ace', sans-serif;
+    -webkit-text-stroke: var(--text-color) 1px;
+    letter-spacing: 1px;
+}
+
+.nav-bar a{
+    font-size: .75rem;
+    color: var(--secondary-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    transition: .3s ease-in-out;
+}
+
+.nav-bar a:hover{
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-color)
+}
+
+.reset-pass-container{
+    width: 100%;
+    height: 100svh;
+    padding: calc(80px + 2rem) 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.reset-pass-container .reset-pass-form{
+    width: 100%;
+    display: grid;
+    place-items: start;
+    gap: 20px;
+}
+
+.reset-pass-form .reset-pass-header{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.reset-pass-form .reset-pass-header h1{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.reset-pass-form .reset-pass-header p{
+    font-size: .7rem;
+    color: var(--secondary-text-color);
+}
+
+.reset-pass-form .reset-pass-input{
+    position: relative;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--secondary-text-color);
+    border-radius: 5px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: .3s ease-in-out;
+}
+
+.reset-pass-form .reset-pass-input i{
+    font-size: .75rem;
+}
+
+.reset-pass-form .reset-pass-input input{
+    all: unset;
+    width: 100%;
+    height: 100%;
+    font-size: .75rem;
+    color: var(--text-color);
+}
+
+.reset-pass-form .reset-pass-input label{
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 32px;
+    font-size: .75rem;
+    color: var(--secondary-text-color);
+    transition: .3s ease-in-out;
+}
+
+.reset-pass-form .reset-pass-input input:focus + label,
+.reset-pass-form .reset-pass-input input:not(:placeholder-shown) + label{
+    transform: translateY(-50%) scale(.8);
+    top: 0;
+    left: 20px;
+    background: var(--dark-text-color);
+    padding: 0 4px;
+}
+
+.reset-pass-form .reset-pass-input:focus-within{
+    border: 1px solid var(--accent-color);
+}
+
+.reset-pass-form .reset-pass-input:has(input:valid){
+    border: 1px solid var(--text-color);
+}
+
+.reset-pass-form .reset-pass-input:has(input:invalid:not(:placeholder-shown)){
+    border: 1px solid var(--other-color);
+}
+
+.options{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 4px;
+}
+
+.options .go-back-btn{
+    font-size: .65rem;
+    color: var(--secondary-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    opacity: .6;
+    transition: .3s ease-in-out;
+}
+
+.options .go-back-btn:hover{
+    opacity: 1;
+    text-shadow: 0 0 10px var(--text-color);
+}
+
+/* Login Button */
+.reset-pass-container .reset-btn{
+    align-self: center;
+    padding: 12px 40px;
+    background: var(--accent-color);
+    color: var(--text-color);
+    font-size: .75rem;
+    font-weight: 500;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    text-align: center;
+    transition: .5s ease-in-out;
+}
+
+.reset-pass-container .reset-btn:hover{
+    background: transparent;
+    box-shadow: 0 0 10px var(--accent-color);
+    transform: scale(0.9);
+}
+
+/* Responsive Design */
+@media (min-width: 375px){
+    .nav-bar{
+        padding: 2rem;
+    }
+
+    .reset-pass-container{
+        padding: calc(80px + 2rem) 2rem 2rem;
+    }
+}
+
+@media (min-width: 425px){
+    .reset-pass-container{
+        align-items: center;
+    }
+
+    .reset-pass-container .reset-pass-form{
+        width: 357px;
+    }
+
+    .reset-pass-form .reset-pass-header h1{
+        font-size: 1.35rem;
+    }
+
+    .reset-pass-form .reset-pass-header p{
+        font-size: .8rem;
+    }
+
+    .reset-pass-form .reset-pass-input{
+        padding: 16px;
+        gap: 12px;
+        border-radius: 10px;
+    }
+
+    .reset-pass-form .reset-pass-input input,
+    .reset-pass-form .reset-pass-input i,
+    .reset-pass-form .reset-pass-input label{
+        font-size: .8rem;
+    }
+
+    .reset-pass-form .reset-pass-input label{
+        left: 40px;
+    }
+
+    .reset-pass-form .reset-pass-input input:focus + label,
+    .reset-pass-form .reset-pass-input input:not(:placeholder-shown) + label{
+        left: 26px;
+        padding: 8px;
+    }
+
+    .reset-pass-container .options .go-back-btn{
+        font-size: .8rem;
+    }
+
+    .reset-pass-container .reset-btn{
+        padding: 12px 54px;
+        font-size: .8rem;
+        border-radius: 8px;
+    }
+}
+
+@media (min-width: 520px){
+    .nav-bar{
+        padding: 2.5rem;
+    }
+
+    .nav-bar .logo{
+        font-size: 1.5rem;
+    }
+
+    .nav-bar a{
+        font-size: .8rem;
+    }
+
+    .reset-pass-container{
+        padding: calc(100px + 2.5rem) 2.5rem 2rem;
+    }
+
+    .reset-pass-container .reset-btn{
+        padding: 14px 48px;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 910px){
+    .nav-bar{
+        padding: 2.5rem 3.5rem;
+    }
+
+    .reset-pass-container .reset-pass-form{
+        width: 450px;
+        gap: 24px;
+    }
+
+    .reset-pass-form .reset-pass-header h1{
+        font-size: 1.7rem;
+    }
+
+    .reset-pass-form .reset-pass-header p{
+        font-size: .9rem;
+    }
+
+    .reset-pass-form .reset-pass-input{
+        padding: 20px;
+        gap: 16px;
+    }
+
+    .reset-pass-form .reset-pass-input input,
+    .reset-pass-form .reset-pass-input i,
+    .reset-pass-form .reset-pass-input label,
+    .reset-pass-form .options a{
+        font-size: .9rem;
+    }
+
+    .reset-pass-form .reset-pass-input label{
+        left: 48px;
+    }
+
+    .reset-pass-form .reset-pass-input input:focus + label,
+    .reset-pass-form .reset-pass-input input:not(:placeholder-shown) + label{
+        left: 32px;
+        padding: 12px;
+    }
+}
+
+@media (min-width: 1395px){
+    .nav-bar{
+        padding: 3rem 5rem;
+    }
+
+    .nav-bar .logo{
+        font-size: 2rem;
+    }
+
+    .nav-bar a{
+        font-size: 1rem;
+    }
+
+    .reset-pass-container{
+        padding: calc(100px + 3rem) 5rem 2rem;
+    }
+
+    .reset-pass-container .reset-pass-form{
+        width: 500px;
+        gap: 32px;
+    }
+
+    .reset-pass-form .reset-pass-input input,
+    .reset-pass-form .reset-pass-input i,
+    .reset-pass-form .reset-pass-input label,
+    .reset-pass-form .options .go-back-btn{
+        font-size: 1rem;
+    }
+
+    .reset-pass-container .reset-btn{
+        padding: 14px 54px;
+
+    }
+}

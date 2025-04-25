@@ -95,7 +95,7 @@ body{
     color: var(--secondary-text-color);
 }
 
-.confirmation-container .login-btn{
+.confirmation-container .reset-pass-btn{
     color: var(--text-color);
     font-size: .75rem;
     border: 1px solid var(--accent-color);
@@ -105,7 +105,7 @@ body{
     transition: .5s ease-in-out;
 }
 
-.confirmation-container .login-btn:hover{
+.confirmation-container .reset-pass-btn:hover{
     transform: scale(.9);
     background: transparent;
     box-shadow: 0 0 10px var(--accent-color);
@@ -133,7 +133,7 @@ body{
         font-size: .8rem;
     }
 
-    .confirmation-container .login-btn{
+    .confirmation-container .reset-pass-btn{
         font-size: .9rem;
         padding: 12px 32px;
     }
@@ -164,7 +164,7 @@ body{
         font-size: .9rem;
     }
 
-    .confirmation-container .login-btn{
+    .confirmation-container .reset-pass-btn{
         font-size: .9rem;
         padding: 12px 40px;
     }
@@ -211,7 +211,7 @@ body{
         padding: calc(100px + 3rem) 4rem 2rem;
     }
 
-    .confirmation-container .login-btn{
+    .confirmation-container .reset-pass-btn{
         font-size: 1rem;
         padding: 16px 48px;
     }

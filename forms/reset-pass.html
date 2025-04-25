@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- RemixIcon CDN Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+    <!-- CSS Link -->
+     <link rel="stylesheet" href="../css/reset-pass.css">
+    <title>Reset your password - AMG Task Pro</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+     <nav class="nav-bar">
+        <h1 class="logo">AMG</h1>
+        <a href="#" class="customer-service-btn">Customer Service <i class="ri-arrow-right-line"></i></a>
+     </nav>
+
+     <!-- reset-pass Container -->
+      <main class="reset-pass-container">
+        <form class="reset-pass-form">
+            <div class="reset-pass-header">
+                <h1>Reset your Password</h1>
+                <p>To reset your password, please input your backup<br>security password for verification</p>
+            </div>
+            <!-- Inputs -->
+            <div class="reset-pass-input">
+                <i class="ri-lock-password-fill"></i>
+                <input type="number" id="backup-pass-input" placeholder=" " required>
+                <label for="backup-pass-input">Backup Security Password</label>
+             </div>
+
+             <div class="reset-pass-input">
+                <i class="ri-lock-password-fill"></i>
+                <input type="password" id="new-pass-input" placeholder=" " required>
+                <label for="new-pass-input">Enter Your New Password</label>
+                <i class="ri-eye-fill"></i>
+             </div>
+
+             <div class="reset-pass-input">
+                <i class="ri-lock-password-fill"></i>
+                <input type="password" id="confirm-pass-input" placeholder=" " required>
+                <label for="confirm-pass-input">Confirm Your Password</label>
+                <i class="ri-eye-fill"></i>
+             </div>
+
+             <div class="options">
+                <a href="#" class="go-back-btn">Go back<i class="ri-arrow-right-line"></i></a>
+             </div>
+        </form>
+        <!-- reset-pass Button -->
+        <a href="#" class="reset-btn">Reset Now</button>
+      </main>
+</body>
+</html>
