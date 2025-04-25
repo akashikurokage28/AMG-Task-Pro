@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+@font-face {
+    font-family: "remixicon";
+    src: url("//cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.woff2") format("woff2");
+    font-display: swap;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Instrument Sans, sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --text-color: #e5d7fe;
+    --secondary-text-color: #a79db9;
+    --dark-text-color: #0f0e11;
+    --accent-color: #8c36e2;
+    --other-color: #fa193f;
+}
+
+body{
+    background: var(--dark-text-color);
+    color: var(--text-color);
+}
+
+/* Navigation Bar */
+.nav-bar{
+    position: fixed;
+    width: 100%;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.nav-bar .logo{
+    font-size: 1.25rem;
+    font-family: 'Bruno Ace', sans-serif;
+    -webkit-text-stroke: var(--text-color) 1px;
+    letter-spacing: 1px;
+}
+
+.nav-bar a{
+    font-size: .75rem;
+    color: var(--secondary-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    transition: .3s ease-in-out;
+}
+
+.nav-bar a:hover{
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-color)
+}
+
+/* Main Container */
+.login-container{
+    width: 100%;
+    height: 100svh;
+    padding: calc(80px + 2rem) 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.login-container .login-form{
+    width: 100%;
+    display: grid;
+    place-items: start;
+    gap: 20px;
+}
+
+.login-form .login-title{
+    grid-column: -1 / 1;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.login-form .login-input{
+    position: relative;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--secondary-text-color);
+    border-radius: 5px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: .3s ease-in-out;
+}
+
+.login-form .login-input i{
+    font-size: .75rem;
+}
+
+.login-form .login-input input{
+    all: unset;
+    width: 100%;
+    height: 100%;
+    font-size: .75rem;
+    color: var(--text-color);
+}
+
+.login-form .login-input label{
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 32px;
+    font-size: .75rem;
+    color: var(--secondary-text-color);
+    transition: .3s ease-in-out;
+}
+
+.login-form .login-input input:focus + label,
+.login-form .login-input input:not(:placeholder-shown) + label{
+    transform: translateY(-50%) scale(.8);
+    top: 0;
+    left: 20px;
+    background: var(--dark-text-color);
+    padding: 0 4px;
+}
+
+.login-form .login-input:focus-within{
+    border: 1px solid var(--accent-color);
+}
+
+.login-form .login-input:has(input:valid){
+    border: 1px solid var(--text-color);
+}
+
+.login-form .login-input:has(input:invalid:not(:placeholder-shown)){
+    border: 1px solid var(--other-color);
+}
+
+
+/* Login Options */
+.login-container .options{
+    width: 100%;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.options a{
+    font-size: .65rem;
+    color: var(--secondary-text-color);
+    opacity: .6;
+    transition: .3s ease-in-out;
+}
+
+.options .forgot-pass-btn{
+    text-decoration: underline;
+}
+
+.options a:hover{
+    opacity: 1;
+    text-shadow: 0 0 10px var(--text-color);
+}
+
+/* Login Button */
+.login-container .login-btn{
+    align-self: center;
+    padding: 12px 40px;
+    background: var(--accent-color);
+    color: var(--text-color);
+    font-size: .75rem;
+    font-weight: 500;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    text-align: center;
+    transition: .5s ease-in-out;
+}
+
+.login-container .login-btn:hover{
+    background: transparent;
+    box-shadow: 0 0 10px var(--accent-color);
+    transform: scale(0.9);
+}
+
+/* Responsive Design */
+@media (min-width: 375px){
+    .nav-bar{
+        padding: 2rem;
+    }
+
+    .login-container{
+        padding: calc(80px + 2rem) 2rem 2rem;
+    }
+}
+
+@media (min-width: 425px){
+    .login-container{
+        align-items: center;
+    }
+
+    .login-container .login-form{
+        width: 377px;
+    }
+
+    .login-container .login-title{
+        font-size: 1.35rem;
+    }
+
+    .login-form .login-input{
+        padding: 16px;
+        gap: 12px;
+        border-radius: 10px;
+    }
+
+    .login-form .login-input input,
+    .login-form .login-input i,
+    .login-form .login-input label{
+        font-size: .8rem;
+    }
+
+    .login-form .login-input label{
+        left: 40px;
+    }
+
+    .login-form .login-input input:focus + label,
+    .login-form .login-input input:not(:placeholder-shown) + label{
+        left: 26px;
+        padding: 8px;
+    }
+
+    .login-container .options a{
+        font-size: .8rem;
+    }
+
+    .login-container .login-btn{
+        padding: 12px 54px;
+        font-size: .8rem;
+        border-radius: 8px;
+    }
+}
+
+@media (min-width: 520px){
+    .nav-bar{
+        padding: 2.5rem;
+    }
+
+    .nav-bar .logo{
+        font-size: 1.5rem;
+    }
+
+    .nav-bar a{
+        font-size: .8rem;
+    }
+
+    .login-container{
+        padding: calc(100px + 2.5rem) 2.5rem 2rem;
+    }
+
+    .login-container .login-btn{
+        padding: 14px 48px;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 910px){
+    .nav-bar{
+        padding: 2.5rem 3.5rem;
+    }
+
+    .login-container .login-form{
+        width: 450px;
+        gap: 32px;
+    }
+
+    .login-form .login-title{
+        font-size: 1.7rem;
+    }
+
+    .login-form .login-input{
+        padding: 20px;
+        gap: 16px;
+    }
+
+    .login-form .login-input input,
+    .login-form .login-input i,
+    .login-form .login-input label,
+    .login-form .options a{
+        font-size: .9rem;
+    }
+
+    .login-form .login-input label{
+        left: 48px;
+    }
+
+    .login-form .login-input input:focus + label,
+    .login-form .login-input input:not(:placeholder-shown) + label{
+        left: 32px;
+        padding: 12px;
+    }
+}
+
+@media (min-width: 1395px){
+    .nav-bar{
+        padding: 3rem 5rem;
+    }
+
+    .nav-bar .logo{
+        font-size: 2rem;
+    }
+
+    .nav-bar a{
+        font-size: 1rem;
+    }
+
+    .login-container{
+        padding: calc(100px + 3rem) 5rem 2rem;
+    }
+
+    .login-container .login-form{
+        width: 500px;
+        gap: 32px;
+    }
+
+    .login-form .login-input input,
+    .login-form .login-input i,
+    .login-form .login-input label,
+    .login-form .options a{
+        font-size: 1rem;
+    }
+
+    .login-container .login-btn{
+        padding: 14px 54px;
+
+    }
+}
