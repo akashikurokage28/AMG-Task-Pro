@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+@font-face {
+    font-family: "remixicon";
+    src: url("//cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.woff2") format("woff2");
+    font-display: swap;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Instrument Sans, sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --text-color: #e5d7fe;
+    --secondary-text-color: #a79db9;
+    --dark-text-color: #0f0e11;
+    --accent-color: #8c36e2;
+    --other-color: #fa193f;
+}
+
+body{
+    background: var(--dark-text-color);
+    color: var(--text-color);
+    width: 100%;
+    height: 100vh;
+}
+
+.main-container{
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-direction: column;
+    text-align: center;
+}
+
+.main-container h1{
+    font-size: 2rem;
+}
+
+.main-container .btns{
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr))
+}

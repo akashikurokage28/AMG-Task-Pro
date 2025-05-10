@@ -21,7 +21,7 @@ userDataInputs.forEach(input => {
 function validateUserInputs(){
     const isInputFieldsEmpty = nameInput.value.trim() === "" || usernameInput.value.trim() === "" || passwordInput.value.trim() === "" || backupCodeInput.value.trim() === "";
 
-    if(isInputFieldsEmpty || !confirmInfoCheckbox.checked || passwordInput.value !== confirmPassInput.value){
+    if(isInputFieldsEmpty || !confirmInfoCheckbox.checked || confirmPassInput.value !== passwordInput.value){
         createAccBtn.setAttribute("disabled", "");
     } else{
         createAccBtn.removeAttribute("disabled");

@@ -189,6 +189,16 @@ body{
     transform: scale(0.9);
 }
 
+.login-container .login-btn:disabled{
+    border: 1px solid var(--secondary-text-color);
+    border-radius: 5px;
+    color: var(--dark-text-color);
+    background: var(--secondary-text-color);
+    opacity: .7;
+    cursor: not-allowed;
+    transition: .3s ease-in-out;
+}
+
 /* Responsive Design */
 @media (min-width: 375px){
     .nav-bar{
