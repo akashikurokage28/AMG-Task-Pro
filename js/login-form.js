@@ -6,26 +6,25 @@ const loginBtn = document.querySelector('.login-btn');
 
 /* Login Logic Function */
 // 1. Get the Username and Password saved on the Local Storage
-const getUserData = localStorage.getItem("AMG User Admin") || [];
-const loadUserData = JSON.parse(getUserData);
-// Local Storage Inputs
-const loadUsername = loadUserData.username;
-const loadUserPassword = loadUserData.password;
-// Load Login Status Boolean from Local Storage
-const loadLoginStatus = loadUserData.isLoggedIn;
+// Local Storage Key
+    let localStorageKey = "AMG User Admin";
+
 
 // 2. Check if the Both Username and Password from the login input and Local Storage are the same
 loginBtn.addEventListener("click", login);
 
 function login(){
-    if(usernameInput.value.trim() === loadUsername && passwordInput.value.trim() === loadUserPassword){
-        // If the username and password are correct, redirect to the dashboard
-        window.location.href = "../forms/confirmation.html";
+    // Load Username and Password from Local Storage
+    const getUserData = localStorage.getItem(localStorageKey);
+    const loadUserData = JSON.parse(getUserData);
+    const loadUsername = loadUserData.username;
+    const loadUserPassword = loadUserData.password;
 
-        // Update "loadLoginStatus" boolean to true
-        loadLoginStatus = true;
-        localStorage.setItem("AMG User Admin", loadLoginStatus);
-
+    if(usernameInput.value === loadUsername && passwordInput.value === loadUserPassword){
+        // Redirect to Dashboard
+        window.location.href = "../forms/dashboard.html";   
+        loadUserData.isLoggedIn = "true";
+        localStorage.setItem(localStorageKey, JSON.stringify(loadUserData));
     } else{
         validateForm();
     }
@@ -33,6 +32,12 @@ function login(){
 
 //Login Validation Form
 function validateForm(){
+    // Local Storage objects
+    const getUserData = localStorage.getItem(localStorageKey);
+    const loadUserData = JSON.parse(getUserData);
+    const loadUsername = loadUserData.username;
+    const loadUserPassword = loadUserData.password;
+
     const userInputs = usernameInput.value.trim() && passwordInput.value.trim();
     let compareLoginInputs = usernameInput.value.trim() === loadUsername && passwordInput.value.trim() === loadUserPassword;
 
