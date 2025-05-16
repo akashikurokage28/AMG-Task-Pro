@@ -170,8 +170,9 @@ body{
     text-shadow: 0 0 10px var(--text-color);
 }
 
-/* Login Button */
+/* Reset Password Button */
 .reset-pass-container .reset-btn{
+    all: unset;
     align-self: center;
     padding: 12px 40px;
     background: var(--accent-color);
@@ -188,6 +189,20 @@ body{
     background: transparent;
     box-shadow: 0 0 10px var(--accent-color);
     transform: scale(0.9);
+}
+
+.reset-pass-container .reset-btn:disabled{
+    background: var(--secondary-text-color);
+    color: var(--dark-text-color);
+    border: 1px solid var(--secondary-text-color);
+    transition: .5s ease-in-out;
+    cursor: not-allowed;
+}
+
+.reset-pass-container .reset-btn:disabled:hover{
+    background: var(--secondary-text-color);
+    box-shadow: none;
+    transform: none;
 }
 
 /* Responsive Design */

@@ -12,20 +12,18 @@ menuBarCloseIcon.addEventListener("click", () => {
 });
 
 
-// Checks if the user is already created an account
+// Checks if the user is already created an account or not
 const getStartedBtn = document.querySelector(".get-started-btn");
 const localStorageKey = "AMG User Admin";
 
 getStartedBtn.addEventListener("click", checkUserAcc);
 
 function checkUserAcc(){
-    if(localStorageKey in localStorage){
-        if(window.location.pathname !== "/forms/login-form.html"){
-            window.location.href = "../forms/login-form.html";
-        } else{
-            if(window.location.pathname !== "/forms/create-acc.html"){
-                window.location.href = "../forms/create-acc.html";
-            }
-        }
+    const AMGUserData = localStorage.getItem(localStorageKey);
+
+    if(AMGUserData){
+        window.location.href = "../forms/login-form.html";
+    }else {
+        window.location.href = "../forms/create-acc.html";
     }
 }

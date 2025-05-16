@@ -11,7 +11,7 @@ function checkLoginStatus() {
     const currentPath = window.location.pathname;
 
     // Check if the user is logged in
-    if (loadUserData && loadUserData.isLoggedIn === "true") {
+    if (loadUserData.isLoggedIn === "true") {
         // Redirect to Dashboard if not already there
         if (currentPath !== "/forms/dashboard.html") {
             window.location.href = "../forms/dashboard.html";
