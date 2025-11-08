@@ -120,7 +120,7 @@ html, body{
 }
 
 .nav-bar .nav-links li a:hover{
-    color: var(--accent-color);
+    color: var(--dark-text-color);
 }  
 
 .nav-bar .secondary-cta-container{
