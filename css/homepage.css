@@ -41,7 +41,7 @@ html, body{
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, #0f0e1110, #0f0e1160);
+    background: linear-gradient(to top right, #0f0e1130, #0f0e1190);
     background-blend-mode: multiply;
     z-index: 1; 
     pointer-events: none; 
@@ -213,6 +213,7 @@ html, body{
     box-shadow: -0.5px -0.5px 0 var(--text-color),
                 0.5px 0.5px 0 var(--dark-text-color);
     transition: 0.5s ease-in-out;
+    cursor: pointer;
 }
 
 .hero-section .cta-container .get-started-btn:hover{
@@ -230,7 +231,7 @@ html, body{
 }
 
 .hero-section .cta-container .learn-more-btn:hover{
-    color: var(--accent-color);
+    color: var(--dark-text-color);
 }
 
 .hero-section .cta-container .learn-more-btn::before{
@@ -247,7 +248,7 @@ html, body{
 
 .hero-section .cta-container .learn-more-btn:hover::before{
     width: 100%;
-    background: var(--accent-color);
+    background: var(--dark-text-color);
 }
 
 /* AOS Configuration */

@@ -20,10 +20,10 @@ function checkLoginStatus() {
         // Redirect to Homepage if the user is logged out
         if (currentPath === "/forms/dashboard.html") {
             // Prevent access to dashboard.html
-            window.location.href = "../homepage.html";
-        } else if (currentPath !== "/homepage.html") {
+            window.location.href = "../index.html";
+        } else if (currentPath !== "/index.html") {
             // Redirect to homepage if on any other page
-            window.location.href = "../homepage.html";
+            window.location.href = "../index.html";
         }
     }
 }

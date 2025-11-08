@@ -17,7 +17,7 @@ function logout() {
     }
 
     // Redirect to Homepage after logout
-    window.location.href = "../homepage.html";
+    window.location.href = "../index.html";
 }
 
 
@@ -45,7 +45,7 @@ function deleteAccount(){
             localStorage.removeItem(localStorageKey);
             alert("Account has been deleted successfully");
             // Redirect to the Homepage
-            window.location.href = "../homepage.html";
+            window.location.href = "../index.html";
         }
     }
 }
